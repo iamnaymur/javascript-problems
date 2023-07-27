@@ -66,21 +66,20 @@ const findTwoSumIndices = (sortedArray, target) => {
 
 // *Task 5
 const javascriptCalculator = (num1, operator, num2) => {
-  switch (operator) {
-    case "+":
-      return num1 + num2;
-    case "-":
-      return num1 - num2;
-    case "*":
-      return num1 * num2;
-    case "/":
-      if (num2 !== 0) {
-        return num1 / num2;
-      } else {
-        return "Cannot divide by zero";
-      }
-    default:
-      return "Invalid operator";
+  if (operator === "+") {
+    return num1 + num2;
+  } else if (operator === "-") {
+    return num1 - num2;
+  } else if (operator === "*") {
+    return num1 * num2;
+  } else if (operator === "/") {
+    if (num2 !== 0) {
+      return num1 / num2;
+    } else {
+      return "Cannot divide because it is zero";
+    }
+  } else {
+    return "Invalid";
   }
 };
 
@@ -105,7 +104,7 @@ const generateRandomPassword = (length) => {
 // *Task 8
 const findSecondSmallest = (array) => {
   if (array.length < 2) {
-    return "Array should contain at least two numbers";
+    return "Array should contain two numbers";
   }
 
   let smallest = Infinity;
